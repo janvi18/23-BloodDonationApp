@@ -5,7 +5,12 @@
       <map>
         <entry key="..\:/ROYAL/Android/BloodDonationApp/app/src/main/res/drawable/button_background.xml" value="0.2703125" />
         <entry key="..\:/ROYAL/Android/BloodDonationApp/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.2703125" />
+        <entry key="..\:/ROYAL/Android/BloodDonationApp/app/src/main/res/drawable/ic_logout.xml" value="0.14635416666666667" />
+        <entry key="..\:/ROYAL/Android/BloodDonationApp/app/src/main/res/drawable/ic_menu.xml" value="0.2703125" />
         <entry key="..\:/ROYAL/Android/BloodDonationApp/app/src/main/res/drawable/ic_password.xml" value="0.2703125" />
+        <entry key="..\:/ROYAL/Android/BloodDonationApp/app/src/main/res/drawable/red_bg.xml" value="0.2703125" />
+        <entry key="..\:/ROYAL/Android/BloodDonationApp/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.25416666666666665" />
+        <entry key="..\:/ROYAL/Android/BloodDonationApp/app/src/main/res/layout/activity_donor_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/ROYAL/Android/BloodDonationApp/app/src/main/res/layout/activity_donor_registration.xml" value="0.25416666666666665" />
         <entry key="..\:/ROYAL/Android/BloodDonationApp/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/ROYAL/Android/BloodDonationApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
