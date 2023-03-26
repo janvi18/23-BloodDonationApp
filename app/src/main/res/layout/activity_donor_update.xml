@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F32F2F"
+    android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".LoginActivity">
+    tools:context=".DonorUpdateActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -24,32 +25,6 @@
             android:layout_margin="10dp"
             android:orientation="vertical">
 
-            <ImageView
-
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="0dp"
-                android:src="@drawable/appicon" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Login Page"
-                android:textColor="#F32F2F"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:text="Sign in to continue"
-                android:textColor="#F32F2F"
-                android:textSize="20sp"
-                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,6 +32,58 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/profile"
+                    app:civ_border_color="#F32F2F"
+                    app:civ_border_width="2dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_person"
+                        android:drawablePadding="10dp"
+                        android:hint="Enter Your Name"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_phone"
+                        android:drawablePadding="10dp"
+                        android:hint="Enter Your Number"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Spinner
+                    android:id="@+id/spinnerUBloodGrp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp" />
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -89,43 +116,37 @@
                         android:drawableStart="@drawable/ic_password"
                         android:drawablePadding="10dp"
                         android:hint="Enter Your Password"
-                        android:imeOptions=""
+                        android:imeOptions="actionDone"
                         android:importantForAutofill="no"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-<!--                <TextView-->
-<!--                    android:id="@+id/forgotPassword"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginTop="10dp"-->
-<!--                    android:gravity="end"-->
-<!--                    android:text="Forgot password?"-->
-<!--                    android:textColor="#F32F2F"-->
-<!--                    android:textStyle="bold" />-->
 
                 <android.widget.Button
-                    android:id="@+id/loginButton"
+                    android:id="@+id/updateButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/button_background"
-                    android:text="Sign In Now"
+                    android:text="Update Donor"
                     android:textAllCaps="false"
                     android:textColor="#fff"
                     android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/tvSignup"
+
+                <android.widget.Button
+                    android:id="@+id/deleteButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:gravity="center"
-                    android:text="Don't have an account? Sign Up"
-                    android:textColor="#F24DDF0D"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_background"
+                    android:text="Delete Donor"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:visibility="gone" />
 
 
             </LinearLayout>
@@ -133,8 +154,6 @@
 
         </LinearLayout>
 
-
     </androidx.cardview.widget.CardView>
-
 
 </ScrollView>

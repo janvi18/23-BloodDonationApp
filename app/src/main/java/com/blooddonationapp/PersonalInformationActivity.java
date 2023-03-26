@@ -19,15 +19,13 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-
-public class MainActivity extends AppCompatActivity {
+public class PersonalInformationActivity extends AppCompatActivity {
     ListView listview;
-//    FloatingActionButton btnAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_personal_information);
 
         listview = findViewById(R.id.ls_User_listview);
 
@@ -35,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void GetDonorsApi() {
-        ArrayList<DonorLangModel> arrayList = new ArrayList<DonorLangModel>();
+        ArrayList<PersonalLangModel> arrayList = new ArrayList<PersonalLangModel>();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, Utils.DONOR_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -46,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
 
                     //sort
-                    for(int i=0;i<jsonArray.length();i++){
-                        for(int j=0;j<jsonArray.length()-1;j++){
-                            if(jsonArray.getJSONObject(j).getString("userName").compareTo(jsonArray.getJSONObject(j+1).getString("userName")) > 0){
-                              JSONObject tmp = jsonArray.getJSONObject(j);
-                              jsonArray.put(j,jsonArray.getJSONObject(j+1));
-                                jsonArray.put(j+1,tmp);
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        for (int j = 0; j < jsonArray.length() - 1; j++) {
+                            if (jsonArray.getJSONObject(j).getString("userName").compareTo(jsonArray.getJSONObject(j + 1).getString("userName")) > 0) {
+                                JSONObject tmp = jsonArray.getJSONObject(j);
+                                jsonArray.put(j, jsonArray.getJSONObject(j + 1));
+                                jsonArray.put(j + 1, tmp);
 
                             }
                         }
@@ -67,19 +65,19 @@ public class MainActivity extends AppCompatActivity {
                         String strBtype = jsonObject1.getString("bloodType");
 
 
-                        DonorLangModel donorLangModel = new DonorLangModel();
-                        donorLangModel.set_id(strDonorId);
-                        donorLangModel.setUserName(strUserName);
-                        donorLangModel.setContactNo(strContactNo);
-                        donorLangModel.setBloodType(strBtype);
-                        donorLangModel.setEmail(strEmail);
-                        donorLangModel.setPassword(strPassword);
-                        arrayList.add(donorLangModel);
+                        PersonalLangModel personalLangModel = new PersonalLangModel();
+                        personalLangModel.set_id(strDonorId);
+                        personalLangModel.setUserName(strUserName);
+                        personalLangModel.setContactNo(strContactNo);
+                        personalLangModel.setBloodType(strBtype);
+                        personalLangModel.setEmail(strEmail);
+                        personalLangModel.setPassword(strPassword);
+                        arrayList.add(personalLangModel);
 
                     }
-                    DonorListAdapter donorListAdapter = new DonorListAdapter(MainActivity.this, arrayList);
-                    listview.setAdapter(donorListAdapter);
-                    donorListAdapter.notifyDataSetChanged();
+                    PersonalListAdapter personalListAdapter = new PersonalListAdapter(PersonalInformationActivity.this, arrayList);
+                    listview.setAdapter(personalListAdapter);
+                    personalListAdapter.notifyDataSetChanged();
 
                 } catch (JSONException e) {
                     e.printStackTrace();
