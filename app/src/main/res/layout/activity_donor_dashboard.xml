@@ -13,13 +13,6 @@
         android:background="#FFFFFF"
         android:padding="30dp">
 
-        <!--        <ImageView-->
-        <!--            android:id="@+id/menuIcon"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginTop="10dp"-->
-        <!--            android:src="@drawable/ic_menu" />-->
-
         <TextView
             android:id="@+id/tv_text"
             android:layout_width="wrap_content"

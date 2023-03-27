@@ -22,7 +22,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ListView listview;
-//    FloatingActionButton btnAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,19 +38,18 @@ public class MainActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, Utils.DONOR_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("TAG", "onResponse:" + response);
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray = jsonObject.getJSONArray("data");
 
-                    //sort
-                    for(int i=0;i<jsonArray.length();i++){
-                        for(int j=0;j<jsonArray.length()-1;j++){
-                            if(jsonArray.getJSONObject(j).getString("userName").compareTo(jsonArray.getJSONObject(j+1).getString("userName")) > 0){
-                              JSONObject tmp = jsonArray.getJSONObject(j);
-                              jsonArray.put(j,jsonArray.getJSONObject(j+1));
-                                jsonArray.put(j+1,tmp);
+                    //bubble sort
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        for (int j = 0; j < jsonArray.length() - 1; j++) {
+                            if (jsonArray.getJSONObject(j).getString("userName").compareTo(jsonArray.getJSONObject(j + 1).getString("userName")) > 0) {
+                                JSONObject tmp = jsonArray.getJSONObject(j);
+                                jsonArray.put(j, jsonArray.getJSONObject(j + 1));
+                                jsonArray.put(j + 1, tmp);
 
                             }
                         }
@@ -92,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
-
 
     }
 }

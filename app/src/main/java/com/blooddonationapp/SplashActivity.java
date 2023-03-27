@@ -37,7 +37,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, DonorDashboardActivity.class));
+                startActivity(new Intent(SplashActivity.this, AdminDashboardActivity.class));
                 finish();
             }
         }, 4000);

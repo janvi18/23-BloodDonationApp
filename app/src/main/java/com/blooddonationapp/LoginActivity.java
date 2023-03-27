@@ -95,7 +95,6 @@ public class LoginActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, Utils.SESSION_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("TAG", "Display--onResponse:" + response);
 
                 try {
                     JSONObject jsonObject = new JSONObject(response);
@@ -140,7 +139,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                Log.e("Login Response ===", "onResponse: " + response);
                 Intent i = new Intent(LoginActivity.this, DonorDashboardActivity.class);
                 startActivity(i);
             }

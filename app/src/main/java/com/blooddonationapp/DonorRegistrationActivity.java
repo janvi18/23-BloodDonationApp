@@ -117,8 +117,6 @@ public class DonorRegistrationActivity extends AppCompatActivity {
                     edt_password.requestFocus();
                     edt_password.setError("PASSWORD MUST CONTAIN AT LEAST :\n ONE DIGIT, ONE LOWERCASE LETTER, ONE UPPERCASE LETTER,AND A SPECIAL CHARATER\nNO SPACE ALLOWED\nMINIMUM 8 CHARACTERS ALLOWED");
                 } else {
-                    //linkedList
-                    Log.e("api calling", "now");
                     addDonor(strName, strContactNo, strBloodGrpSelected, strEmail, strPassword);
                 }
             }
@@ -131,9 +129,6 @@ public class DonorRegistrationActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Utils.LINKEDLIST_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("data", response);
-                // Intent intent = new Intent(DonorRegistrationActivity.this, LoginActivity.class);
-                //startActivity(intent);
             }
         }, new Response.ErrorListener() {
             @Override
@@ -161,7 +156,6 @@ public class DonorRegistrationActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Utils.DONOR_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("data", response);
                 addLinkedList(strName, strContactNo, strBloodGrpSelected, strEmail, strPassword);
                 Intent intent = new Intent(DonorRegistrationActivity.this, LoginActivity.class);
                 startActivity(intent);

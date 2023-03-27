@@ -135,8 +135,6 @@ public class DonorUpdateActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.PUT, Utils.DONOR_URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("api calling done", response);
-                Log.e("id in api: ", strDonorId);
                 Intent intent = new Intent(DonorUpdateActivity.this, MainActivity.class);
                 startActivity(intent);
             }
@@ -163,12 +161,10 @@ public class DonorUpdateActivity extends AppCompatActivity {
 
     private void deleteAPI(String donorId) {
 
-        Log.e("TAG****", "deleteAPI Update " + donorId);
         StringRequest stringRequest = new StringRequest(Request.Method.DELETE, Utils.DONOR_URL + "/" + donorId, new Response.Listener<String>() {
             @Override
 
             public void onResponse(String response) {
-                Log.e("api calling done", response);
                 Intent intent = new Intent(DonorUpdateActivity.this, MainActivity.class);
                 startActivity(intent);
             }

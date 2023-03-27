@@ -49,8 +49,6 @@ public class MyListAdapter extends BaseAdapter {
         tvData.setText(langModelArrayList.get(i).getStrData());
         imgLang.setImageResource(langModelArrayList.get(i).getImgData());
 
-       /* tvData.setText(langModelArrayList.get(position).getStrData() + " " + langModelArrayList.get(position).getImgData());*/
-
         return view;
     }
 }

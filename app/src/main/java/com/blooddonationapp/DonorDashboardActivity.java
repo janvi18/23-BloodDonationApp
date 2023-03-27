@@ -31,7 +31,7 @@ public class DonorDashboardActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(DonorDashboardActivity.this,SplashActivity.class);
+                Intent i = new Intent(DonorDashboardActivity.this, SplashActivity.class);
                 startActivity(i);
             }
         });
@@ -51,7 +51,10 @@ public class DonorDashboardActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if (i == 0) {
-                    Intent intent = new Intent(DonorDashboardActivity.this, MainActivity.class);
+                    Intent intent = new Intent(DonorDashboardActivity.this, PersonalInformationActivity.class);
+                    startActivity(intent);
+                } else if (i == 1){
+                    Intent intent = new Intent(DonorDashboardActivity.this, DonorHistoryDisplayActivity.class);
                     startActivity(intent);
                 }
             }
